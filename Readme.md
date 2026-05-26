@@ -6,7 +6,7 @@ The entire project—including the model architecture, gradient descent training
 
 ## 🚀 Key Features
 
-- **Single-File Architecture:** Zero complex modular imports or directory dependencies; clone and run instantly.
+- **Single-File Architecture:** Zero complex modular imports or directory dependencies; copy and run instantly.
 - **Matrix Vectorization:** Scaled efficiently via NumPy matrix operations utilizing vector extensions rather than nested iterative loops.
 - **Versatile Dimension Handling:** Natively accommodates simple data inputs ($y = wx + b$) and scales automatically to multivariate column structures ($y = Xw + b$).
 - **Clean API Design:** Built around industry-standard `.fit()` and `.predict()` paradigms.
@@ -18,25 +18,5 @@ The entire project—including the model architecture, gradient descent training
 ### 1. Underlying Hypothesis Matrix
 Predictions ($\hat{y}$) are derived via standard inner dot-products of features combined with optimized parameter intercepts:
 
-$$\hat{y} = Xw + b$$
-
-### 2. Loss Optimization Function (Mean Squared Error)
-The average performance metric calculates localized square residuals relative to full target spaces:
-
-$$MSE = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2$$
-
-### 3. Gradient Calculation Formulae
-Partial updates with respect to weights ($dw$) and biases ($db$) isolate optimization paths along descending local curvatures:
-
-$$\frac{\partial L}{\partial w} = \frac{2}{n} X^T (\hat{y} - y)$$
-
-$$\frac{\partial L}{\partial b} = \frac{2}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)$$
-
----
-
-## 💻 Setup & Usage Instructions
-
-### 1. Requirements Setup
-Ensure local installation of mandatory numeric computation and visualization libraries:
-```bash
-pip install numpy matplotlib
+```math
+\hat{y} = Xw + b
