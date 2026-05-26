@@ -1,14 +1,13 @@
 import numpy as np
 
-class LinearRegressionFromScratch:
+class LinearRegression:
     def __init__(self, learning_rate=0.01, epochs=1000):
         self.lr = learning_rate
         self.epochs = epochs
-        self.weights = None  # Represents 'm'
-        self.bias = None     # Represents 'b'
+        self.weights = None  
+        self.bias = None     
 
     def fit(self, X, y):
-        # n_samples = number of rows, n_features = number of columns
         n_samples, n_features = X.shape
         
         # Initialize weights to zeros and bias to zero
@@ -43,10 +42,10 @@ import matplotlib.pyplot as plt
 # 1. Generate random, roughly linear data
 np.random.seed(42)
 X = 2 * np.random.rand(100, 1)
-y = 4 + 3 * X.squeeze() + np.random.randn(100) # True relationship: y = 3x + 4 + noise
+y = 4 + 3 * X.squeeze() + np.random.randn(100) 
 
 # 2. Initialize and train our scratch model
-model = LinearRegressionFromScratch(learning_rate=0.1, epochs=500)
+model = LinearRegression(learning_rate=0.1, epochs=500)
 model.fit(X, y)
 
 # 3. Print the learned parameters
